@@ -6,6 +6,21 @@ let userType = "subscriber";
 let userCategory;
 let isAuthenticated = true;
 let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticated";
+let roleAuth;
+
+
+if (userType === "admin"){
+    roleAuth = "Authorized for 'Dietary Services' access and one-on-one interaction with dietician";
+} else if(userType === "subscriber"){
+    roleAuth = "Authorized for partial acces to facilitate 'Dietary Services'";
+}else if (userType === " manager") {
+    roleAuth = "Authorized for 'Dietary Services'";
+}else {
+    roleAuth = "Need to enroll, or subscribe first to enable access"
+}
+
+
+console.log("Dietary services eligibility:", roleAuth)
 
 
 console.log("Authentication Status:", authenticationStatus);
@@ -35,6 +50,21 @@ if (isLoggedIn) {
 
 
 console.log("User Message:", userMessage);
+
+
+switch (userType) {
+    case "admin":
+        userCategory = "Administrator";
+        break;
+    case "manager":
+        userCategory = "Manager";
+        break;
+    case "subscriber":
+        userCategory = "Subscriber";
+        break;
+    default:
+        userCategory = "Unknown";
+}
 
 
 switch (userType) {
