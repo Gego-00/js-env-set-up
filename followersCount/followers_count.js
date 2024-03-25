@@ -7,6 +7,13 @@ function increaseCount() {
 }
 
 
+function resetCount() {
+    count = 0 //Reset variable to 0
+    displayCount(); // Display the count
+    alert("Followers coutn has been reset"); // Show alert message
+}
+
+
 function displayCount() {
     document.getElementById('countDisplay').innerHTML=count; // Display the count in the HTML
 }
